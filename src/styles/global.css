@@ -1,0 +1,28 @@
+html {
+  background-color: rgb(23, 23, 23);
+}
+
+a {
+  color: slateblue;
+}
+
+body,
+h1 {
+  color: white;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 40px auto;
+}
+
+.links {
+  color: white;
+  display: inline-block;
+  text-align: right;
+  margin-left: 20px;
+  font-weight: 400;
+  padding-bottom: 8px;
+  border-bottom: 3px solid transparent;
+}

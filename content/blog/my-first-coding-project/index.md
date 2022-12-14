@@ -13,3 +13,9 @@ We're building a Gatsby site.
 - list
 
 ## Some Header
+
+```javascript
+let name = "mujahid"
+```
+
+![A sunset picture with a quote that says "I disappear sometimes, that's my thing." ](./mycoding.jpg)
