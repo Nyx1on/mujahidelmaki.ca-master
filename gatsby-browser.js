@@ -9,4 +9,5 @@ import "./src/style.css"
 // Highlighting for code blocks
 import "prismjs/themes/prism-okaidia.css"
 
+// Local Custom global CSS
 import "./src/styles/global.css"
