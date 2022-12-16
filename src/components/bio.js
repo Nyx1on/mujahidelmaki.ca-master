@@ -32,25 +32,12 @@ const Bio = () => {
 
   return (
     <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/gatsby-icon.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
-        </p>
-      )}
+      <h2>Hey, Im Mujahid.</h2>
+      <p>
+        I'm a software developer in Ontario, Canada. I love learning and sharing
+        my experiences. This website is my digital home, highlighting my journey
+        over the years!{" "}
+      </p>
     </div>
   )
 }
