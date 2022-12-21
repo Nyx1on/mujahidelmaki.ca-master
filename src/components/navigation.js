@@ -21,11 +21,7 @@ function Navigation() {
             Home
           </Link>
         </li>
-        <li>
-          <Link className="nav-link" to="/blog">
-            Blog
-          </Link>{" "}
-        </li>
+        
         <li>
           <Link className="nav-link" to="/about">
             About
