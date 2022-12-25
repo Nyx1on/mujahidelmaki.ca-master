@@ -1,42 +1,44 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import moon from "../images/moon.png"
 
-function Navigation() {
-  const [theme, setTheme] = useState("light")
-
-  function handleThemeChange() {
-    if (theme === "light") {
-      setTheme("dark")
-    } else {
-      setTheme("light")
-    }
-  }
-
+function Navigation({ theme, onUpdateTheme }) {
   return (
-    <nav>
-      <h1> Mujahid Elmaki</h1>
-      <ul>
-        <li>
-          <Link className="nav-link" to="/">
-            Home
+    <section className="navigation">
+      <div className="container">
+        <div className="nav-wrapper">
+          <Link to="/">
+            <h4>Mujahid Elmaki</h4>
           </Link>
-        </li>
-        
-        <li>
-          <Link className="nav-link" to="/about">
-            About
-          </Link>
-        </li>
-        <li>
-          <Link className="nav-link" to="/projects">
-            Projects
-          </Link>
-        </li>
-      </ul>
-      <button onClick={handleThemeChange}>
-        {theme === "light" ? "Dark Mode" : "Light Mode"}
-      </button>
-    </nav>
+
+          <nav>
+            <div className="nav-item-outer">
+              <Link className="item about" activeclassName="active" to="/about">
+                About
+              </Link>
+
+              <Link className="item blog" to="/blog">
+                Blog
+              </Link>
+
+              <Link className="item projects" to="/projects">
+                Projects
+              </Link>
+
+              <Link className="item illustration" to="/illustration">
+                Illustration
+              </Link>
+            </div>
+          </nav>
+        </div>
+        <div className="theme-toggle">
+          <button onClick={onUpdateTheme}>
+            {theme === "light" ? "Dark Mode" : "Light Mode"}
+            <img src={moon} alt="Theme" />
+          </button>
+        </div>
+      </div>
+    </section>
   )
 }
 

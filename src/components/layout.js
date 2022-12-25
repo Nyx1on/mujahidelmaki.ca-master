@@ -1,34 +1,57 @@
-import * as React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import Navigation from "./navigation"
+import Footer from "./footer"
+import Helmet from "react-helmet"
+import "../styles/global.css"
+import "../styles/dark-mode.css"
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
-  let header
+const Layout = ({ children }) => {
+  // const rootPath = `${__PATH_PREFIX__}/`
+  // const isRootPath = location.pathname === rootPath
+  // let header
 
-  if (isRootPath) {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
-    )
+  // if (isRootPath) {
+  //   header = (
+  //     <h1 className="main-heading">
+  //       <Link to="/">{title}</Link>
+  //     </h1>
+  //   )
+  // } else {
+  //   header = (
+  //     <Link className="header-link-home" to="/">
+  //       {title}
+  //     </Link>
+  //   )
+  // }
+
+  const [theme, setTheme] = useState("dark")
+
+  const onUpdateTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark"
+    window.localStorage.setItem("theme", newTheme)
+    setTheme(newTheme)
   }
 
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme")
+
+    if (savedTheme) {
+      setTheme(savedTheme)
+    }
+  }, [])
+
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      {/* <header className="global-header">{header}</header> */}
-      <Navigation />
+    <div className="global-wrapper">
+      <Helmet>
+        {theme === "dark" && (
+          <link rel="stylesheet" type="text/css" href="/dark-mode.css" />
+        )}
+      </Helmet>
+
+      <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with Love By Mujahid Elmaki
-      </footer>
+      <Footer></Footer>
     </div>
   )
 }

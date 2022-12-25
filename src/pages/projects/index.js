@@ -1,12 +1,12 @@
-import React from 'react'
-import Navigation from '../../components/navigation'
+import React from "react"
+import Navigation from "../../components/navigation"
+import Layout from "../../components/layout"
 
 function project() {
   return (
-    <>
-        <Navigation/> 
-        <div>project</div>
-    </>
+    <Layout>
+      <div>project</div>
+    </Layout>
   )
 }
 
