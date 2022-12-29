@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import maki from "../images/logo.png"
 import moon from "../images/moon.png"
 
 function Navigation({ theme, onUpdateTheme }) {
@@ -7,8 +8,9 @@ function Navigation({ theme, onUpdateTheme }) {
     <section className="navigation">
       <div className="container">
         <div className="nav-wrapper">
-          <Link to="/">
-            <h4>Mujahid Elmaki</h4>
+          <Link to="/" className="item brand">
+            <img src={maki} className="logo" alt="logo" />
+            <span>Mujahid Elmaki</span>
           </Link>
 
           <nav>
@@ -17,15 +19,23 @@ function Navigation({ theme, onUpdateTheme }) {
                 About
               </Link>
 
-              <Link className="item blog" to="/blog">
+              <Link className="item blog" activeclassName="active" to="/blog">
                 Blog
               </Link>
 
-              <Link className="item projects" to="/projects">
+              <Link
+                className="item projects"
+                activeclassName="active"
+                to="/projects"
+              >
                 Projects
               </Link>
 
-              <Link className="item illustration" to="/illustration">
+              <Link
+                className="item illustration"
+                activeclassName="active"
+                to="/illustration"
+              >
                 Illustration
               </Link>
             </div>
