@@ -2,6 +2,19 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import maki from "../images/logo.png"
 import moon from "../images/moon.png"
+import { ExternalLinkIcon } from "../assets/ExternalLinkIcon"
+
+const mainNavItems = [
+  { url: "/", icon: "null", label: "Home", mobileOnly: true },
+  { url: "/about", icon: "null", label: "About" },
+  { url: "/blog", icon: "null", label: "Blog" },
+  { url: "/projects", icon: "null", label: "Projects" },
+  { url: "/illustration", icon: "null", label: "Illustration" },
+]
+
+const socialNavItems = [
+  { url: "https://github.com/mujahidelmaki", icon: "NA", label: "GitHub" },
+]
 
 function Navigation({ theme, onUpdateTheme }) {
   return (
@@ -12,38 +25,42 @@ function Navigation({ theme, onUpdateTheme }) {
             <img src={maki} className="logo" alt="logo" />
             <span>Mujahid Elmaki</span>
           </Link>
-
           <nav>
-            <div className="nav-item-outer">
-              <Link className="item about" activeclassName="active" to="/about">
-                About
-              </Link>
+            {mainNavItems.map(item => (
+              <div className="nav-item-outer" key={item.url}>
+                <Link
+                  to={item.url}
+                  key={item.label}
+                  activeClassName="active"
+                  className={`item ${item.label.toLowerCase()} ${
+                    item.mobileOnly ? "mobile-only" : ""
+                  }`}
+                >
+                  <span>{item.label}</span>
+                </Link>
+              </div>
+            ))}
 
-              <Link className="item blog" activeclassName="active" to="/blog">
-                Blog
-              </Link>
-
-              <Link
-                className="item projects"
-                activeclassName="active"
-                to="/projects"
-              >
-                Projects
-              </Link>
-
-              <Link
-                className="item illustration"
-                activeclassName="active"
-                to="/illustration"
-              >
-                Illustration
-              </Link>
-            </div>
+            {socialNavItems.map(item => (
+              <div className="nav-item-outer" key={item.url}>
+                <img src={item.icon} alt={item.label} className="nav-image" />
+                <a
+                  href={item.url}
+                  key={item.label}
+                  className={`desktop-only item github`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span>{item.label}</span>
+                  <ExternalLinkIcon />
+                </a>
+              </div>
+            ))}
           </nav>
         </div>
+
         <div className="theme-toggle">
           <button onClick={onUpdateTheme}>
-            {theme === "light" ? "Dark Mode" : "Light Mode"}
             <img src={moon} alt="Theme" />
           </button>
         </div>

@@ -666,7 +666,7 @@ a.button:hover {
 
 @media screen and (min-width: 700px) {
   .navigation {
-    padding-top: 3rem;
+    padding-top: 0;
     position: static;
     height: auto;
     border-bottom: none;
