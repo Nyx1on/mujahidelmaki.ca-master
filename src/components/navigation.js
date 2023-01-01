@@ -23,7 +23,7 @@ function Navigation({ theme, onUpdateTheme }) {
         <div className="nav-wrapper">
           <Link to="/" className="item brand">
             <img src={maki} className="logo" alt="logo" />
-            <span>Mujahid Elmaki</span>
+            <span>MΛKI</span>
           </Link>
           <nav>
             {mainNavItems.map(item => (
