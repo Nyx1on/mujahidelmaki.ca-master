@@ -1,10 +1,9 @@
 ---
 title: Self Driving Car
 date: "2022-12-14T22:12:03.284Z"
-description: "Lets Learn Gatsby"
+description: "My experience trying to create a self-driving car using vanilla javascript"
+featured: true
 ---
-
-We're building a Gatsby site.
 
 [Gatsby's Docs](https://www.gatsbyjs.org)
 

@@ -116,8 +116,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
-      popular: Boolean 
+      featured: Boolean 
       categories: String
+      displayDate: Boolean
     }
 
     type Fields {

@@ -88,11 +88,11 @@ const BlogIndex = ({ data, location }) => {
             <div className="highlight-preview">
               {posts.map(post => {
                 const title = post.frontmatter.title || post.fields.slug
-                if (post.frontmatter.popular) {
+                if (post.frontmatter.featured) {
                   return (
                     <div
                       className="muted card flex"
-                      key={post.frontmatter.popular}
+                      key={post.frontmatter.featured}
                     >
                       <div>
                         <time>{post.frontmatter.date}</time>
@@ -138,7 +138,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
-          popular
+          featured
         }
       }
     }

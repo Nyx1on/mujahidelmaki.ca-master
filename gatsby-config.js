@@ -98,8 +98,9 @@ module.exports = {
                   frontmatter {
                     title
                     date
-                    popular
+                    featured
                     categories
+                    displayDate
                   }
                 }
               }

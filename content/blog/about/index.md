@@ -1,8 +1,8 @@
 ---
 title: About Me
-date: "2023-01-01sT22:12:03.284Z"
+date: "2023-01-01"
 description: "Hello World"
-popular: true
+displayDate: false
 ---
 
 21 Year-old Student Aspiring to be a Software Engineer, Traveller, & Part-time Pianist. I also do some cooking from time to time.
