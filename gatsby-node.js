@@ -119,6 +119,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       featured: Boolean 
       categories: String
       displayDate: Boolean
+      thumbnail: File @fileByRelativePath
     }
 
     type Fields {

@@ -3,9 +3,10 @@ import { Link, graphql } from "gatsby"
 import Helmet from "react-helmet"
 import { Hero } from "../components/Hero"
 import { Heading } from "../components/Heading"
-import Bio from "../components/Bio"
+import Img from "gatsby-image"
+
 import Layout from "../components/Layout"
-import Seo from "../components/SEO"
+import SEO from "../components/SEO"
 import config from "../utils/config"
 
 const BlogIndex = ({ data, location }) => {
@@ -94,6 +95,13 @@ const BlogIndex = ({ data, location }) => {
                       className="muted card flex"
                       key={post.frontmatter.featured}
                     >
+                      {post.frontmatter.thumbnail && (
+                        <Img
+                          fixed={
+                            post.frontmatter.thumbnail.childImageSharp.fixed
+                          }
+                        />
+                      )}
                       <div>
                         <time>{post.frontmatter.date}</time>
                         <Link className="card-header" to={post.fields.slug}>
@@ -119,7 +127,7 @@ export default BlogIndex
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="All posts" />
+export const Head = () => <SEO title="All posts" />
 
 export const pageQuery = graphql`
   {
