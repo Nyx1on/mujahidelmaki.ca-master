@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import maki from "../images/logo.png"
+import darkMaki from "../images/logo-dark.png"
 import moon from "../images/moon.png"
 import { ExternalLinkIcon } from "../assets/ExternalLinkIcon"
 
@@ -22,7 +23,11 @@ function Navigation({ theme, onUpdateTheme }) {
       <div className="container">
         <div className="nav-wrapper">
           <Link to="/" className="item brand">
-            <img src={maki} className="logo" alt="logo" />
+            <img
+              src={theme === "light" ? darkMaki : maki}
+              className="logo"
+              alt="logo"
+            />
             <span>MΛKI</span>
           </Link>
           <nav>

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
 import Navigation from "./Navigation"
 import Footer from "./Footer"
 import Helmet from "react-helmet"
+
 import "../styles/global.css"
-import "../styles/dark-mode.css"
 
 const Layout = ({ children }) => {
   // const rootPath = `${__PATH_PREFIX__}/`
