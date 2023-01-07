@@ -2,8 +2,9 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -49,6 +50,7 @@ const BlogPostTemplate = ({
                   </Link>
                 )}
               </li>
+
               <li>
                 {next && (
                   <Link to={next.fields.slug} rel="next">

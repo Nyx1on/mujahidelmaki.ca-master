@@ -1,79 +1,54 @@
 import React from "react"
-import styled from "styled-components"
-import { FaGithub, FaTwitter } from "react-icons/fa"
-import { Link } from "gatsby"
 
-const FooterContainer = styled.h1`
-  position: flex;
-`
-export const FooterWrap = styled.div`
-  padding: 35px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 100vw;
-`
+import vercel from "../images/vercel.png"
+import gatsby from "../images/gatsby-icon.png"
+import github from "../images/github.png"
 
-export const FooterLogoLink = styled(Link)``
-export const FooterLogo = styled.img`
-  width: 90px;
-`
+const links = [
+  { url: "https://taniarascia.substack.com", label: "Newsletter" },
+  { url: "https://ko-fi.com/taniarascia", label: "Ko-Fi" },
+  { url: "https://patreon.com/taniarascia", label: "Patreon" },
+  { url: "https://www.taniarascia.com/rss.xml", label: "RSS" },
+]
+const madeWithLinks = [
+  { url: "https://www.gatsbyjs.org/", label: "Gatsby", icon: gatsby },
+  { url: "https://github.com/taniarascia", label: "GitHub", icon: github },
+  { url: "https://www.netlify.com", label: "Netlify", icon: vercel },
+]
 
-export const WebsiteRights = styled.h5`
-  color: #fff;
-  font-size: 1rem;
-
-  text-align: center;
-
-  /* @media screen and (max-width: 480px) {
-    font-size: 0.7rem;
-  } */
-  flex-shrink: 2;
-`
-
-export const SocialContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  max-width: 1100px;
-`
-
-// export const SocialWrapper = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   max-width: 1100px;
-//   border: 8px solid green;
-// `;
-
-// export const SocialIcons = styled.div`
-//   border: 3px solid red;
-// `;
-
-export const SocialIconLink = styled.a`
-  color: #fff;
-  font-size: 1rem;
-  margin-left: 0.5em;
-`
-
-function Footer() {
+const Footer = () => {
   return (
-    <FooterContainer>
-      <FooterWrap>
-        <FooterLogoLink></FooterLogoLink>
-        <WebsiteRights>
-          © {new Date().getFullYear()}, Built with Love By Mujahid Elmaki{" "}
-        </WebsiteRights>
-
-        <SocialContainer>
-          <SocialIconLink>
-            <FaGithub />
-          </SocialIconLink>
-          <SocialIconLink>
-            <FaTwitter />
-          </SocialIconLink>
-        </SocialContainer>
-      </FooterWrap>
-    </FooterContainer>
+    <footer className="footer">
+      <section>
+        <nav>
+          <span className="desktop-only">Made by Mujahid Elmaki</span>
+          {links.map(link => (
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={link.url}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <nav>
+          {madeWithLinks.map(link => (
+            <a
+              href={link.url}
+              title={link.label}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={link.url}
+            >
+              <span>{link.label}</span>
+              <img src={link.icon} alt={link.label} />
+            </a>
+          ))}
+        </nav>
+      </section>
+    </footer>
   )
 }
 

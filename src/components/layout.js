@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react"
 import Navigation from "./Navigation"
-import Footer from "./Footer"
+import Footer from "./Footer.js"
 import Helmet from "react-helmet"
 
 import "../styles/global.css"
 
-const Layout = ({ children }) => {
+export default function Layout({ children }) {
   // const rootPath = `${__PATH_PREFIX__}/`
   // const isRootPath = location.pathname === rootPath
   // let header
@@ -48,11 +48,11 @@ const Layout = ({ children }) => {
         )}
       </Helmet>
 
-      <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
-      <main>{children}</main>
-      <Footer></Footer>
+      <div id="layout" className="layout">
+        <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
+        <main>{children}</main>
+        <Footer />
+      </div>
     </div>
   )
 }
-
-export default Layout

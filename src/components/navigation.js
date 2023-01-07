@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import maki from "../images/logo.png"
 import darkMaki from "../images/logo-dark.png"

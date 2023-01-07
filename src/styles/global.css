@@ -699,6 +699,7 @@ a.button:hover {
     max-height: 24px;
     max-width: 24px;
     margin-right: 0.25rem;
+    margin-left: 0.3rem;
   }
 
   .navigation nav {
