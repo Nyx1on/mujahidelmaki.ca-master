@@ -50,6 +50,7 @@ const BlogIndex = ({ data, location }) => {
                 </small>
               </p>
             </Hero>
+
             <div className="decoration">
               <img
                 src={

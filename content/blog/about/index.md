@@ -11,7 +11,7 @@ displayDate: false
 
 - Working on this website
 - Grinding LeetCode
-- Writing about my intership experience @ OpenText
+- Writing about my internship experience @ OpenText
 - Working on a new AI Project
 
 ##### CONNECT

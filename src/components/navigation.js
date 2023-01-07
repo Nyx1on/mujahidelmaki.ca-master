@@ -2,7 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import maki from "../images/logo.png"
 import darkMaki from "../images/logo-dark.png"
-import moon from "../images/moon.png"
+import moon from "../images/moon-icon.png"
+import sun from "../images/sun-icon.png"
 import { ExternalLinkIcon } from "../assets/ExternalLinkIcon"
 
 const mainNavItems = [
@@ -66,7 +67,7 @@ function Navigation({ theme, onUpdateTheme }) {
 
         <div className="theme-toggle">
           <button onClick={onUpdateTheme}>
-            <img src={moon} alt="Theme" />
+            <img src={theme === "light" ? moon : sun} alt="Theme" />
           </button>
         </div>
       </div>
