@@ -48,11 +48,9 @@ export default function Layout({ children }) {
         )}
       </Helmet>
 
-      <div id="layout" className="layout">
-        <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
-        <main>{children}</main>
-        <Footer />
-      </div>
+      <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
+      <main>{children}</main>
+      <Footer />
     </div>
   )
 }
