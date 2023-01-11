@@ -11,7 +11,7 @@ const mainNavItems = [
   { url: "/about", icon: "null", label: "About" },
   { url: "/blog", icon: "null", label: "Blog" },
   { url: "/projects", icon: "null", label: "Projects" },
-  { url: "/illustration", icon: "null", label: "Illustration" },
+  { url: "/illustration", icon: "null", label: "Art" },
 ]
 
 const socialNavItems = [

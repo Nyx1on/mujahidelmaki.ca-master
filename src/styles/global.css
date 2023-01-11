@@ -627,8 +627,8 @@ a.button:hover {
 
 .navigation a.item.home:hover,
 .navigation a.item.home.active,
-.navigation a.item.illustration:hover,
-.navigation a.item.illustration.active {
+.navigation a.item.art:hover,
+.navigation a.item.art.active {
   border-bottom-color: var(--indigo);
 }
 
@@ -647,8 +647,8 @@ a.button:hover {
   border-bottom-color: var(--rainbow-5);
 }
 
-.navigation a.item.git-hub:hover,
-.navigation a.item.git-hub.active {
+.navigation a.item.github:hover,
+.navigation a.item.github.active {
   border-bottom-color: var(--rainbow-1);
 }
 
