@@ -189,7 +189,7 @@ const BlogIndex = ({ data, location }) => {
                         <time>{project.date}</time>
                         <a
                           className="card-header"
-                          href={`https://github.com/taniarascia/${project.slug}`}
+                          href={`https://github.com/mujahidelmaki/${project.slug}`}
                           target="_blank"
                           rel="noreferrer"
                         >

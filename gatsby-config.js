@@ -14,7 +14,7 @@ module.exports = {
       name: `Mujahid Elmaki`,
       summary: `A blog for learning code`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `MAKI's Digital Garden`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       twitter: `250maki_`,
