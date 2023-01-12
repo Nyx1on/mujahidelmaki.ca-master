@@ -12,9 +12,9 @@ const BlogPostTemplate = ({
   const siteTitle = site.siteMetadata?.title || `Title`
   const { title, date, displayDate } = post.frontmatter
   return (
-    <div className="container">
-      <div className="article-content">
-        <Layout location={location} title={siteTitle}>
+    <div>
+      <Layout location={location} title={siteTitle}>
+        <div className="container">
           <article
             className="blog-post"
             itemScope
@@ -59,8 +59,8 @@ const BlogPostTemplate = ({
               </li>
             </ul>
           </nav>
-        </Layout>
-      </div>
+        </div>
+      </Layout>
     </div>
   )
 }

@@ -53,11 +53,7 @@ const BlogIndex = ({ data, location }) => {
 
             <div className="decoration">
               <img
-                src={
-                  window.localStorage.theme === "dark"
-                    ? "/logo.png"
-                    : "/logo-dark.png"
-                }
+                src={"/hero-maki.png"}
                 alt="MAKI KEYZ"
                 className="image hero-image"
                 title="RAM Ram"

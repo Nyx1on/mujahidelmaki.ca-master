@@ -41,7 +41,7 @@ export default function Layout({ children }) {
   }, [])
 
   return (
-    <div className="global-wrapper">
+    <div>
       <Helmet>
         {theme === "dark" && (
           <link rel="stylesheet" type="text/css" href="/dark-mode.css" />
