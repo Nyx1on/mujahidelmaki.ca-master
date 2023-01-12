@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Helmet } from "react-helmet"
 import config from "../utils/config"
-import SEO from "./seo"
+import SEO from "./SEO"
 import { Hero } from "./Hero"
 import { StarIcon } from "../assets/StarIcon"
 import { Link } from "gatsby"
@@ -22,58 +22,48 @@ const projectsList = [
     slug: "selfdriving-car",
     tagline:
       "Visualization of a neural network learning to drive a car in a 2D environment.",
-    url: "https://www.keyboardaccordion.com",
     highlight: true,
   },
-  {
-    name: "AI Programming Language",
-    date: "2023",
-    slug: "apl",
-    tagline: "High level programming language that uses AI to code.",
-    url: "https://takenote.dev",
-    writeup: "/building-takenote",
-    highlight: true,
-  },
+  // {
+  //   name: "AI Programming Language",
+  //   date: "2023",
+  //   slug: "apl",
+  //   tagline: "High level programming language that uses AI to code.",
+
+  //   highlight: true,
+  // },
   {
     name: "React Smooth Scroll",
     date: "2019",
     slug: "react-smooth-scroll",
     tagline: "My first react template which uses smooth scroll",
-    url: "https://taniarascia.github.io/chip8",
-    writeup: "/writing-an-emulator-in-javascript-chip8",
-    highlight: true,
   },
   {
     name: "Drum Kit Vizualizer",
     date: "2022",
-    slug: "sokoban",
+    slug: "drumkit-visualizer",
     tagline: "A fun web visualizer for drum kits",
-    url: "https://taniarascia.github.io/sokoban",
-    writeup: "/sokoban-game",
-    highlight: true,
   },
   {
     name: "Guess My Number Game",
     date: "2020",
-    slug: "new-moon",
+    slug: "guess-my-number",
     tagline: "We have all coded this game before",
-    url: "https://taniarascia.github.io/new-moon",
-    highlight: true,
   },
   {
     name: "Pig Game",
     date: "2020",
-    slug: "laconia",
+    slug: "Pig-game",
     tagline: "A 2 player dice game",
     url: "https://laconia.dev",
   },
-  {
-    name: "Code Typing Speed Test",
-    date: "2020",
-    slug: "laconia",
-    tagline: "How fast can you code?",
-    url: "https://laconia.dev",
-  },
+  // {
+  //   name: "Code Typing Speed Test",
+  //   date: "2020",
+
+  //   tagline: "How fast can you code?",
+
+  // },
 ]
 
 function ProjectLayout() {

@@ -1,19 +1,16 @@
 import React from "react"
 
-import vercel from "../images/vercel.png"
+import netlify from "../images/netlify.png"
 import gatsby from "../images/gatsby-icon.png"
 import github from "../images/github.png"
 
 const links = [
-  { url: "https://taniarascia.substack.com", label: "Newsletter" },
-  { url: "https://ko-fi.com/taniarascia", label: "Ko-Fi" },
-  { url: "https://patreon.com/taniarascia", label: "Patreon" },
-  { url: "https://www.taniarascia.com/rss.xml", label: "RSS" },
+  { url: "https://mujahidelmaki.substack.com", label: "Newsletter" },
 ]
 const madeWithLinks = [
   { url: "https://www.gatsbyjs.org/", label: "Gatsby", icon: gatsby },
-  { url: "https://github.com/taniarascia", label: "GitHub", icon: github },
-  { url: "https://www.netlify.com", label: "Netlify", icon: vercel },
+  { url: "https://github.com/mujahidelmaki", label: "GitHub", icon: github },
+  { url: "https://www.netlify.com", label: "Netlify", icon: netlify },
 ]
 
 const Footer = () => {

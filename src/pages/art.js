@@ -2,10 +2,12 @@ import React from "react"
 import IllustrationLayout from "../components/IllustrationLayout"
 import Layout from "../components/Layout"
 
-export default function illustration() {
+function art() {
   return (
-    <Layout>
+    <Layout className="Layout">
       <IllustrationLayout />
     </Layout>
   )
 }
+
+export default art

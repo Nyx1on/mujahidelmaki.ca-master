@@ -9,6 +9,66 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import config from "../utils/config"
 
+const projectsList = [
+  //? name, date, slug, tagline, url, writeup, highlight
+  {
+    name: "mujahidelmaki.ca",
+    date: "2022",
+    slug: "mujahidelmaki.ca-master",
+    url: "https://www.mujahidelmaki.ca",
+    tagline: "The source of this website.",
+  },
+  {
+    name: "Self Driving Car",
+    date: "2022",
+    slug: "selfdriving-car",
+    tagline:
+      "Visualization of a neural network learning to drive a car in a 2D environment.",
+    highlight: true,
+  },
+  // {
+  //   name: "AI Programming Language",
+  //   date: "2023",
+  //   slug: "apl",
+  //   tagline: "High level programming language that uses AI to code.",
+
+  //   highlight: true,
+  // },
+  {
+    name: "React Smooth Scroll",
+    date: "2019",
+    slug: "react-smooth-scroll",
+    tagline: "My first react template which uses smooth scroll",
+    highlight: true,
+  },
+  {
+    name: "Drum Kit Vizualizer",
+    date: "2022",
+    slug: "drumkit-visualizer",
+    tagline: "A fun web visualizer for drum kits",
+    highlight: true,
+  },
+  {
+    name: "Guess My Number Game",
+    date: "2020",
+    slug: "guess-my-number",
+    tagline: "We have all coded this game before",
+  },
+  {
+    name: "Pig Game",
+    date: "2020",
+    slug: "Pig-game",
+    tagline: "A 2 player dice game",
+    url: "https://laconia.dev",
+  },
+  // {
+  //   name: "Code Typing Speed Test",
+  //   date: "2020",
+
+  //   tagline: "How fast can you code?",
+
+  // },
+]
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -35,7 +95,7 @@ const BlogIndex = ({ data, location }) => {
           <div className="hero-wrapper">
             <Hero title="Hey, I'm MΛKI" index>
               <p className="hero-description small width">
-                Welcome to my digital garden.
+                Welcome to my digital garden. 👾
                 <br />
                 <br />
                 I'm a software developer in Waterloo, Ontario. I make
@@ -114,6 +174,60 @@ const BlogIndex = ({ data, location }) => {
                 }
               })}
             </div>
+          </section>
+
+          <section className="segment large">
+            <Heading title="Projects" slug="/projects" />
+
+            <div className="post-preview">
+              {projectsList
+                .filter(project => project.highlight)
+                .map(project => {
+                  return (
+                    <div className="anchored card" key={project.slug}>
+                      <div>
+                        <time>{project.date}</time>
+                        <a
+                          className="card-header"
+                          href={`https://github.com/taniarascia/${project.slug}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {project.name}
+                        </a>
+                        <p>{project.tagline}</p>
+                      </div>
+                      <div className="anchored links">
+                        {project.writeup && (
+                          <Link className="button" to={project.writeup}>
+                            Article
+                          </Link>
+                        )}
+                        <a className="button flex" href={project.url}>
+                          Demo
+                        </a>
+                      </div>
+                    </div>
+                  )
+                })}
+            </div>
+          </section>
+
+          <section className="segment large">
+            <Heading title="Newsletter" />
+            <p>
+              Sign up to get updates when I write something new. No spam ever.
+            </p>
+            <p>
+              <a
+                href="https://mujahidelmaki.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button large highlighted"
+              >
+                Subscribe to the Newsletter
+              </a>
+            </p>
           </section>
         </div>
       </div>
