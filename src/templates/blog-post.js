@@ -4,13 +4,14 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+import Comments from "../components/Commnets"
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
   location,
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
-  const { title, date, displayDate } = post.frontmatter
+  const { title, date, displayDate, comments_off } = post.frontmatter
   return (
     <div>
       <Layout location={location} title={siteTitle}>
@@ -32,33 +33,13 @@ const BlogPostTemplate = ({
             <hr />
             <footer></footer>
           </article>
-          <nav className="blog-post-nav">
-            <ul
-              style={{
-                display: `flex`,
-                flexWrap: `wrap`,
-                justifyContent: `space-between`,
-                listStyle: `none`,
-                padding: 0,
-              }}
-            >
-              <li>
-                {previous && (
-                  <Link to={previous.fields.slug} rel="prev">
-                    ← {title}
-                  </Link>
-                )}
-              </li>
 
-              <li>
-                {next && (
-                  <Link to={next.fields.slug} rel="next">
-                    {next.frontmatter.title} →
-                  </Link>
-                )}
-              </li>
-            </ul>
-          </nav>
+          {!comments_off && (
+            <section id="comments" className="segment comments">
+              <h3>Comments</h3>
+              <Comments issueTerm={post.fields.slug} />
+            </section>
+          )}
         </div>
       </Layout>
     </div>
@@ -91,11 +72,15 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
         description
         displayDate
+        comments_off
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

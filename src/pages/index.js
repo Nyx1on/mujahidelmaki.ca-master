@@ -3,12 +3,11 @@ import { Link, graphql } from "gatsby"
 import Helmet from "react-helmet"
 import { Hero } from "../components/Hero"
 import { Heading } from "../components/Heading"
-import Img from "gatsby-image"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import config from "../utils/config"
-
+const featuredPostsThumbnail = [".", "../moon.png", "../sun-icon.png"]
 const projectsList = [
   //? name, date, slug, tagline, url, writeup, highlight
   {
@@ -99,25 +98,20 @@ const BlogIndex = ({ data, location }) => {
                 <br />
                 <br />
                 I'm a software developer in Waterloo, Ontario. I make
-                <Link to="/projects"> open-source projects</Link> and{" "}
+                <Link to="/projects"> open-source</Link> projects and{" "}
                 <Link to="/blog">write</Link> about code, design, and life. I
-                like playing the Piano, drawing, sci-fi, reading, and gaming.
+                like playing the Piano, drawing, and reading
               </p>
               <br />
               <p>
                 <small className="text-muted">
-                  <em> last updated: December 25th, 2022</em>
+                  <em> last updated: Janurary 24th, 2023</em>
                 </small>
               </p>
             </Hero>
 
             <div className="decoration">
-              <img
-                src={"/hero-maki.png"}
-                alt="MAKI KEYZ"
-                className="image hero-image"
-                title="RAM Ram"
-              />
+              <img src="../hero-maki.png" className="image hero-image" />
             </div>
           </div>
         </div>
@@ -129,17 +123,20 @@ const BlogIndex = ({ data, location }) => {
             <ol style={{ listStyle: `none` }}>
               {posts.map(post => {
                 const title = post.frontmatter.title || post.fields.slug
-
-                return (
-                  <Link
-                    to={post.fields.slug}
-                    key={post.fields.slug}
-                    className="post"
-                  >
-                    <h3>{title}</h3>
-                    <time>{post.frontmatter.date}</time>
-                  </Link>
-                )
+                if (post.frontmatter.title == "About Me") {
+                  return null
+                } else {
+                  return (
+                    <Link
+                      to={post.fields.slug}
+                      key={post.fields.slug}
+                      className="post"
+                    >
+                      <h3>{title}</h3>
+                      <time>{post.frontmatter.date}</time>
+                    </Link>
+                  )
+                }
               })}
             </ol>
           </section>
@@ -148,7 +145,7 @@ const BlogIndex = ({ data, location }) => {
             <Heading title="Featured" />
 
             <div className="highlight-preview">
-              {posts.map(post => {
+              {posts.map((post, i) => {
                 const title = post.frontmatter.title || post.fields.slug
                 if (post.frontmatter.featured) {
                   return (
@@ -156,13 +153,12 @@ const BlogIndex = ({ data, location }) => {
                       className="muted card flex"
                       key={post.frontmatter.featured}
                     >
-                      {post.frontmatter.thumbnail && (
-                        <Img
-                          fixed={
-                            post.frontmatter.thumbnail.childImageSharp.fixed
-                          }
-                        />
-                      )}
+                      <img
+                        src={featuredPostsThumbnail[i]}
+                        width="50"
+                        height="50"
+                      />
+
                       <div>
                         <time>{post.frontmatter.date}</time>
                         <Link className="card-header" to={post.fields.slug}>

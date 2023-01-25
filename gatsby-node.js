@@ -120,6 +120,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       categories: String
       displayDate: Boolean
       thumbnail: File @fileByRelativePath
+      comments_off: Boolean
     }
 
     type Fields {
