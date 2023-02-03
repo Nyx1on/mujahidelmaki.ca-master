@@ -7,7 +7,7 @@ import { Heading } from "../components/Heading"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import config from "../utils/config"
-const featuredPostsThumbnail = [".", "../moon.png", "../sun-icon.png"]
+const featuredPostsThumbnail = [".", "../algo.png", "../sun-icon.png"]
 const projectsList = [
   //? name, date, slug, tagline, url, writeup, highlight
   {
@@ -92,7 +92,7 @@ const BlogIndex = ({ data, location }) => {
 
         <div className="container">
           <div className="hero-wrapper">
-            <Hero title="Hey, I'm MΛKI" index>
+            <Hero title="Hey, I'm Mujahid..." index>
               <p className="hero-description small width">
                 Welcome to my digital garden. 👾
                 <br />
@@ -154,7 +154,7 @@ const BlogIndex = ({ data, location }) => {
                       key={post.frontmatter.featured}
                     >
                       <img
-                        src={featuredPostsThumbnail[i]}
+                        src={featuredPostsThumbnail[i + 1]}
                         width="50"
                         height="50"
                       />

@@ -1,6 +1,6 @@
 :root {
-  --background-color: var(--gray-10);
-  --card-background-color: var(--gray-9);
+  --background-color: var(--gray-11);
+  --card-background-color: var(--gray-10);
   --star: var(--rainbow-5);
   --year: var(--rainbow-4);
 
@@ -16,7 +16,7 @@
   --button-background-color: var(--gray-8);
 
   --post-time-color: var(--rainbow-4);
-  --card-time-color: var(--blue);
+  --card-time-color: var(--pink);
   --project-time-color: var(--star);
   --link: #9ca0fa;
   --link-hover-color: #222;
