@@ -7,7 +7,7 @@ import { Heading } from "../components/Heading"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import config from "../utils/config"
-const featuredPostsThumbnail = [".", "../algo.png", "../sun-icon.png"]
+const featuredPostsThumbnail = [".", "../pro_management.png", "../codewars.png"]
 const projectsList = [
   //? name, date, slug, tagline, url, writeup, highlight
   {

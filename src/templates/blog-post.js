@@ -21,11 +21,6 @@ const BlogPostTemplate = ({
             itemScope
             itemType="http://schema.org/Article"
           >
-            <header>
-              <h1 itemProp="headline">{title}</h1>
-
-              <p> {displayDate ? date : ""}</p>
-            </header>
             <section
               dangerouslySetInnerHTML={{ __html: post.html }}
               itemProp="articleBody"

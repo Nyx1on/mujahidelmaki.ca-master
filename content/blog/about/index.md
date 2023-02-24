@@ -6,6 +6,8 @@ displayDate: false
 comments_off: true
 ---
 
+# Bio
+
 Hello and welcome to my personal website! My name is Mujahid Elmaki, also known as Maki. I am a Computer Science student at Wilfrid Laurier University. On this site, you will find a variety of projects, tutorials, art and other creations that I am excited to share with the world. You can explore some of my [open-source](/projects) work, and the [blog](/blog) page is home to a range of tutorials and other content. My goal for this website is to share my knowledge and skills, and to make the internet a better place. I hope that my website will inspire others to create their own online space to share their passions and talents. I want you to know that you will not find any ads, affiliate links, tracking, analytics, sponsored posts or paywall on my website.
 
 You can contact me by email <ins>**hello**</ins> at <ins>**mujahidelmaki.ca**</ins> to say hi! I always appreciate meeting new people.

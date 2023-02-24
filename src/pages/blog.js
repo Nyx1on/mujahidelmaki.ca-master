@@ -7,6 +7,7 @@ import SEO from "../components/SEO"
 import { Link } from "gatsby"
 import { Heading } from "../components/Heading"
 import Img from "gatsby-image"
+const featuredPostsThumbnail = [".", "../pro_management.png", "../codewars.png"]
 
 export default function blog({ data }) {
   const posts = data.allMarkdownRemark.nodes
@@ -15,7 +16,7 @@ export default function blog({ data }) {
     <Layout>
       <div className="container">
         <section className="segment first">
-          <Heading title="Latest Posts" slug="/blog" />
+          <Heading title="Writing" />
 
           <ol style={{ listStyle: `none` }}>
             {posts.map(post => {
@@ -36,10 +37,10 @@ export default function blog({ data }) {
         </section>
 
         <section className="segment large">
-          <Heading title="Featured" />
+          <Heading title="Highlights" />
 
           <div className="highlight-preview">
-            {posts.map(post => {
+            {posts.map((post, i) => {
               const title = post.frontmatter.title || post.fields.slug
               if (post.frontmatter.featured) {
                 return (
@@ -47,11 +48,12 @@ export default function blog({ data }) {
                     className="muted card flex"
                     key={post.frontmatter.featured}
                   >
-                    {post.frontmatter.thumbnail && (
-                      <Img
-                        fixed={post.frontmatter.thumbnail.childImageSharp.fixed}
-                      />
-                    )}
+                    <img
+                      src={featuredPostsThumbnail[i + 1]}
+                      width="50"
+                      height="50"
+                    />
+
                     <div>
                       <time>{post.frontmatter.date}</time>
                       <Link className="card-header" to={post.fields.slug}>
