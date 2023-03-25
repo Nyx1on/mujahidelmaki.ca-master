@@ -7,7 +7,7 @@ import SEO from "../components/SEO"
 import { Link } from "gatsby"
 import { Heading } from "../components/Heading"
 import Img from "gatsby-image"
-const featuredPostsThumbnail = [".", "../pro_management.png", "../codewars.png"]
+const featuredPostsThumbnail = [".", "../codewars.png"]
 
 export default function blog({ data }) {
   const posts = data.allMarkdownRemark.nodes
@@ -65,6 +65,22 @@ export default function blog({ data }) {
               }
             })}
           </div>
+        </section>
+        <section className="segment large">
+          <Heading title="Newsletter" />
+          <p>
+            Sign up to get updates when I write something new. No spam ever.
+          </p>
+          <p>
+            <a
+              href="https://mujahidelmaki.substack.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button large highlighted"
+            >
+              Subscribe to the Newsletter
+            </a>
+          </p>
         </section>
       </div>
     </Layout>
