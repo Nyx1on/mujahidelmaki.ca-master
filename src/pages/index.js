@@ -131,7 +131,7 @@ const BlogIndex = ({ data, location }) => {
             <ol style={{ listStyle: `none` }}>
               {posts.map(post => {
                 const title = post.frontmatter.title || post.fields.slug
-                if (post.frontmatter.title == "About Me") {
+                if (post.frontmatter.title === "About Me") {
                   return null
                 } else {
                   return (
@@ -165,6 +165,7 @@ const BlogIndex = ({ data, location }) => {
                         src={featuredPostsThumbnail[i + 1]}
                         width="50"
                         height="50"
+                        alt="post"
                       />
 
                       <div>
@@ -176,6 +177,7 @@ const BlogIndex = ({ data, location }) => {
                     </div>
                   )
                 }
+                return null;
               })}
             </div>
           </section>
