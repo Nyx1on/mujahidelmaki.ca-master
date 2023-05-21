@@ -7,6 +7,8 @@ import { Heading } from "../components/Heading"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import config from "../utils/config"
+import lottie from "lottie-web"
+import animation from "../animations/maki2.json"
 const featuredPostsThumbnail = [".", "../pro_management.png", "../codewars.png"]
 const projectsList = [
   //? name, date, slug, tagline, url, writeup, highlight
@@ -69,6 +71,14 @@ const projectsList = [
   // },
 ]
 const BlogIndex = ({ data, location }) => {
+  let animationContainer = React.createRef()
+  React.useEffect(() => {
+    lottie.loadAnimation({
+      container: animationContainer.current,
+      animationData: animation,
+    })
+  })
+
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -110,9 +120,7 @@ const BlogIndex = ({ data, location }) => {
               </p>
             </Hero>
 
-            <div className="decoration">
-              <img src="../hero-maki.png" className="image hero-image" />
-            </div>
+            <div className="decoration" ref={animationContainer}></div>
           </div>
         </div>
 
